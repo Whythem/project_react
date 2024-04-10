@@ -1,0 +1,18 @@
+footer {
+  background-color: #011724;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flow;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content {
+  display: ruby-text;
+}
+
+footer p {
+  color: white;
+  margin-left: 30px;
+}
