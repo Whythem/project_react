@@ -6,7 +6,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const url = 'https://webtoon.p.rapidapi.com/canvas/home?language=en';
+    const url = 'https://webtoon.p.rapidapi.com/canvas/home?language=fr';
     const options = {
       method: 'GET',
       headers: {
@@ -17,7 +17,7 @@ export default function Home() {
     fetch(url, options)
       .then(response => response.json())
       .then(data => {
-        setManhwa(data)
+        setManhwa(data.message.result.challengeHomeRecommendTitleList)
         setLoading(false)
       })
       .catch((err) => {
