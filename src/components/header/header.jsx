@@ -16,7 +16,7 @@ function Header() {
       
         <h1>MANGA DEMON</h1>
 
-        <button>Login</button>
+        <button className="login">Login</button>
       </nav>
       <nav className="nav-list-mobile" id="mobileNav">
         <a href="index.html"><i className="fas fa-film"></i></a>

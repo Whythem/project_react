@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import Spinner from "../components/Spinner/spinner"
+import Spinner from "../components/Spinner/spinner";
+import CardManhwa from "../components/CardManhwa/cardmanhwa";
+import '../css/styles.scss';
 
 export default function Home() {
-  const [manhwa, setManhwa] = useState([]);
+  const [manhwas, setManhwa] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,7 +33,20 @@ export default function Home() {
           <Spinner/>
         :
         <>
-          {console.log(manhwa)}
+          <div className="wrapper">
+            <div className="populaires-container container">
+              <div className="title-filter" id="title-tendances">
+                <h2>Last update</h2>
+              </div>
+              <div className="grid-tendances">
+                {
+                  manhwas.map((manhwa) => (
+                    <CardManhwa key={manhwa.titleInfo.titleNo} manhwa={manhwa.titleInfo} />
+                  ))
+                }
+              </div>
+            </div>
+          </div>
         </>
       }
     </>
