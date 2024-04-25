@@ -1,0 +1,49 @@
+.manhwa {
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  width: 200px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  padding: 0px;
+  text-align: center;
+}
+
+.title {
+  color: white;
+  text-shadow: 5px 5px 5px black;
+}
+
+.chapter-count {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #D4F5F5; /* Couleur par défaut */
+  color: black;
+  text-align: center;
+  border-radius: 20%;
+}
+
+.chapter-count p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 30px;
+}

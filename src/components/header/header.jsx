@@ -8,8 +8,8 @@ function Header() {
         <div className="menu">
           <img src={logo} alt="logo" width="70" />
           <ul>
-            <li><a href="">Accueil</a></li>
-            <li><a href="">Search</a></li>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/search">Search</a></li>
             <li><a href="">Follow</a></li>
           </ul>
         </div>

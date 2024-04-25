@@ -8,7 +8,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const url = 'https://webtoon.p.rapidapi.com/canvas/home?language=fr';
+    const url = 'https://webtoon.p.rapidapi.com/canvas/home?language=en';
     const options = {
       method: 'GET',
       headers: {
