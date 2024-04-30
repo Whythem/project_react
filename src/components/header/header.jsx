@@ -4,7 +4,7 @@ import logo from "../../assets/Logo.png";
 function Header() {
   return (
     <>
-      <nav className="desktop-nav">
+      <nav className="desktop-nav roboto-medium">
         <div className="menu">
           <img src={logo} alt="logo" width="70" />
           <ul>

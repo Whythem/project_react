@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer>
       <img src={logo} alt="Logo" width="70px"/>
-      <div className="footer">
+      <div className="footer inter-normal">
         <p>Privacy policy</p>
         <p>DMCA Notices</p>
         <p>Content policy</p>

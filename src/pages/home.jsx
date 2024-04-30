@@ -4,27 +4,31 @@ import CardManhwa from "../components/CardManhwa/cardmanhwa";
 import '../css/styles.scss';
 
 export default function Home() {
-  const [manhwas, setManhwa] = useState([]);
+  const [manhwasPopular, setManhwaPopular] = useState([]);
+  const [manhwasRecommendations, setManhwaRecommendations] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const url = 'https://webtoon.p.rapidapi.com/canvas/home?language=en';
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': '8be1034410msh86769c4d94a197ap19fbd1jsnd0c1de49152a',
-        'X-RapidAPI-Host': 'webtoon.p.rapidapi.com'
-      }
-    };
-    fetch(url, options)
+    fetch('https://api.jikan.moe/v4/top/manga')
       .then(response => response.json())
       .then(data => {
-        setManhwa(data.message.result.challengeHomeRecommendTitleList)
+        setManhwaPopular(data.data)
         setLoading(false)
       })
       .catch((err) => {
         console.log(err.message);
       })
+
+    fetch('https://api.jikan.moe/v4/recommendations/manga')
+      .then(response => response.json())
+      .then(data => {
+        setManhwaRecommendations(data.data.slice(0, 25))
+        setLoading(false)
+      })
+      .catch((err) => {
+        console.log(err.message);
+      })
+
   }, [])
   return(
     <>
@@ -36,12 +40,24 @@ export default function Home() {
           <div className="wrapper">
             <div className="populaires-container container">
               <div className="title-filter" id="title-tendances">
-                <h2>Last update</h2>
+                <h2 className="inter-bold">Most popular</h2>
               </div>
               <div className="grid-tendances">
                 {
-                  manhwas.map((manhwa) => (
-                    <CardManhwa key={manhwa.titleInfo.titleNo} manhwa={manhwa.titleInfo} />
+                  manhwasPopular.map((manhwa) => (
+                    <CardManhwa key={manhwa.mal_id} manhwa={manhwa} />
+                  ))
+                }
+              </div>
+            </div>
+            <div className="populaires-container container">
+              <div className="title-filter" id="title-tendances">
+                <h2 className="inter-bold">Recommendation</h2>
+              </div>
+              <div className="grid-tendances">
+                {
+                  manhwasRecommendations.map((manhwa) => (
+                    <CardManhwa key={manhwa.entry[0].mal_id} manhwa={manhwa.entry[0]} />
                   ))
                 }
               </div>

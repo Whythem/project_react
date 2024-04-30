@@ -37,7 +37,6 @@
 .title-filter h2 {
   margin-right: 20px;
   font-size: 24px;
-  font-weight: 500;
   border: 2px solid #D4F5F5;
   padding: 10px;
   background-color: #D4F5F5;
@@ -186,4 +185,15 @@
 
 .grandeImage {
   width: 400px;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-variation-settings:
+    "slnt" 0;
 }
