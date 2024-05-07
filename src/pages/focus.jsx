@@ -40,7 +40,9 @@ export default function Focus() {
                 <div className="score">{manhwa.score}</div>
                   <div className="title-date">
                     <h1>{manhwa.title} </h1>
-                    <span>Genre : {manhwa.representGenre}</span>
+                    <span>Genre : {manhwa.genres.map((genre) => (
+                      <>{genre.name}  </>
+                    ))}</span>
                   </div>
                 </div>
                 <div className="synopsis">
